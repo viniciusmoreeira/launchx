@@ -1,0 +1,12 @@
+{
+  "name": "launchx",
+  "displayName": "launchx",
+  "expo": {
+    "name": "launchx",
+    "slug": "launchx",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
