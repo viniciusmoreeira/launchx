@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Animated, Text } from 'react-native';
 
-import { Container } from './styles';
+import { Container, TitleRegular, TitleBold } from './styles';
 
 const Home: React.FC = () => {
   const [opacity] = useState(new Animated.Value(0));
@@ -23,6 +23,9 @@ const Home: React.FC = () => {
     >
       <Container>
         <Text style={{ color: 'white', fontSize: 20 }}>LaunchX</Text>
+
+        <TitleRegular>LaunchX D-Din Regular</TitleRegular>
+        <TitleBold>LaunchX D-Din Bold</TitleBold>
       </Container>
     </Animated.View>
   );

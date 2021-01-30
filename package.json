@@ -5,7 +5,8 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "expo": "expo start -c"
   },
   "dependencies": {
     "@expo-google-fonts/roboto": "^0.1.0",
@@ -15,7 +16,7 @@
     "expo": "~39.0.2",
     "expo-splash-screen": "~0.6.2",
     "expo-updates": "~0.3.3",
-    "lottie-react-native": "^3.5.0",
+    "lottie-react-native": "^2.6.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
