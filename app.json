@@ -1,12 +1,16 @@
 {
   "name": "launchx",
-  "displayName": "launchx",
+  "displayName": "LaunchX",
   "expo": {
-    "name": "launchx",
+    "name": "LaunchX",
     "slug": "launchx",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "icon": "./src/assets/images/icon-app/icon.png",
+    "splash": {
+      "backgroundColor": "#111115"
+    }
   }
 }
