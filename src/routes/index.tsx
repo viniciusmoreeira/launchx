@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import {
   useFonts,
@@ -31,7 +31,7 @@ const Routes: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2900);
+    }, 3500);
   }, []);
 
   if (loading || !fontsLoaded) {
@@ -44,10 +44,7 @@ const Routes: React.FC = () => {
           backgroundColor: '#111115',
         }}
       >
-        <Text style={{ fontSize: 32, color: '#fff' }}>
-          Carregando o seu aplicativo!
-        </Text>
-        {/* <LottieView source={SplashAnimation} autoPlay /> */}
+        <LottieView source={SplashAnimation} autoPlay />
       </View>
     );
   }
