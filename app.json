@@ -1,16 +1,18 @@
 {
-  "name": "launchx",
-  "displayName": "LaunchX",
   "expo": {
     "name": "LaunchX",
     "slug": "launchx",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "orientation": "portrait",
     "icon": "./src/assets/images/icon-app/icon.png",
     "splash": {
       "backgroundColor": "#111115"
-    }
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
   }
 }

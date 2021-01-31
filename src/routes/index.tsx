@@ -9,9 +9,9 @@ import {
   Roboto_700Bold,
   Roboto_900Black,
 } from '@expo-google-fonts/roboto';
-// import LottieView from 'lottie-react-native';
+import LottieView from 'lottie-react-native';
 
-// import { SplashAnimation } from '~/assets/animations';
+import { SplashAnimation } from '~/assets/animations';
 import { D_DIN_Regular, D_DIN_Bold } from '~/assets/fonts';
 
 import AppRoutes from './app.routes';
