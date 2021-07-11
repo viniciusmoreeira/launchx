@@ -1,18 +1,16 @@
 export default {
   colors: {
-    background: '#111115',
+    background: '#DDDDDD',
+    primary: '#222831',
+    secondary: '#30475E',
+    accent: '#DA0037',
+    light: '#EDEDED',
     white: '#fff',
-    blue: '#1A42E3',
-    blueLight: '#6F9BFC',
-    blueDark: '#0a043c',
-    gray: '#65737E',
-    grayLight: '#D8D8D8',
-    grayDark: '#1E1E1E',
-    red: '#E20613',
-    black: '#000000',
-    yellow: '#EDEF39',
-    shadow: '#E7EAF0',
-    green: '#009819',
+
+    success: '#82DB20',
+    error: '#EF0000',
+    warning: '#FFD806',
+    info: '#176EE8',
   },
   fontSizes: {
     size9: '9px',
@@ -32,8 +30,6 @@ export default {
     size28: '28px',
   },
   fontFamily: {
-    DDINRegular: 'D_DIN_Regular',
-    DDINBold: 'D_DIN_Bold',
     RobotoLight: 'Roboto_300Light',
     RobotoRegular: 'Roboto_400Regular',
     RobotoMedium: 'Roboto_500Medium',
