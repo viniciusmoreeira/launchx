@@ -1,9 +1,10 @@
 import 'styled-components/native';
 
 import dark from './themes/dark';
+import defaultTheme from './themes/defaultTheme';
 
-type Theme = typeof dark;
+type ThemeType = typeof dark & typeof defaultTheme;
 
 declare module 'styled-components/native' {
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme extends ThemeType {}
 }

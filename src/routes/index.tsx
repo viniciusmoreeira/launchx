@@ -12,6 +12,7 @@ import LottieView from 'lottie-react-native';
 import styled from 'styled-components/native';
 
 import { SplashAnimation } from '~/assets/animations';
+import { useTheme } from '~/context';
 import { useTimeout } from '~/hooks';
 
 import AppRoutes from './app.routes';

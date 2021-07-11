@@ -4,9 +4,11 @@ import React, { useEffect } from 'react';
 import { StatusBar, useColorScheme } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
+import merge from 'deepmerge';
 import * as Updates from 'expo-updates';
 import FlashMessage from 'react-native-flash-message';
-import { ThemeProvider } from 'styled-components';
+
+import { ManageThemeProvider as ThemeProvider } from '~/context/ThemeContext';
 
 import themes from './styles/themes';
 
@@ -14,7 +16,8 @@ import Routes from './routes';
 
 const App: React.FC = () => {
   const deviceTheme = useColorScheme();
-  const theme = themes[deviceTheme || 'dark'];
+  const activeTheme = themes[deviceTheme || 'dark'];
+  const combinedTheme = merge(themes.defaultTheme, activeTheme);
 
   useEffect(() => {
     async function updateApp() {
@@ -34,10 +37,10 @@ const App: React.FC = () => {
 
   return (
     <NavigationContainer>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider initial={combinedTheme}>
         <StatusBar hidden />
-        <Routes />
         <FlashMessage position="top" />
+        <Routes />
       </ThemeProvider>
     </NavigationContainer>
   );
