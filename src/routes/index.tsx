@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import React, { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 
 import {
   useFonts,
@@ -13,11 +13,12 @@ import LottieView from 'lottie-react-native';
 
 import { SplashAnimation } from '~/assets/animations';
 import { D_DIN_Regular, D_DIN_Bold } from '~/assets/fonts';
+import { useTimeout } from '~/hooks';
 
 import AppRoutes from './app.routes';
 
 const Routes: React.FC = () => {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [fontsLoaded] = useFonts({
     D_DIN_Regular,
     D_DIN_Bold,
@@ -28,22 +29,11 @@ const Routes: React.FC = () => {
     Roboto_900Black,
   });
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3500);
-  }, []);
+  useTimeout(() => setIsLoading(false), 3500);
 
-  if (loading || !fontsLoaded) {
+  if (isLoading || !fontsLoaded) {
     return (
-      <View
-        style={{
-          flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#111115',
-        }}
-      >
+      <View style={styles.container}>
         <LottieView source={SplashAnimation} autoPlay />
       </View>
     );
@@ -51,5 +41,14 @@ const Routes: React.FC = () => {
 
   return <AppRoutes />;
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#111115',
+  },
+});
 
 export default Routes;
