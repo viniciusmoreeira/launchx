@@ -1,26 +1,51 @@
 import React from 'react';
 
-import {
-  createStackNavigator,
-  TransitionPresets,
-} from '@react-navigation/stack';
+import { Ionicons } from '@expo/vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { TransitionPresets } from '@react-navigation/stack';
 
-import * as Views from '~/screens';
+import * as Pages from '~/pages';
 
-const App = createStackNavigator();
+interface iIconsList {
+  [key: string]: {
+    iconName: string;
+  };
+}
+
+const iconsList: iIconsList = {
+  Home: {
+    iconName: 'home',
+  },
+  Launches: {
+    iconName: 'rocket',
+  },
+};
+
+const Tab = createBottomTabNavigator();
 
 const AppRoutes: React.FC = () => (
-  <App.Navigator
-    screenOptions={{
+  <Tab.Navigator
+    screenOptions={({ route }) => ({
       headerShown: false,
+      tabBarShowLabel: false,
       ...TransitionPresets.ModalPresentationIOS,
-      cardStyle: {
-        backgroundColor: '#111115',
+      tabBarIcon: ({ color, size }) => {
+        const { iconName } = iconsList[route.name];
+
+        return <Ionicons name={iconName} size={size} color={color} />;
       },
-    }}
+      tabBarActiveTintColor: '#fff',
+      tabBarInactiveTintColor: '#444444',
+      tabBarStyle: {
+        backgroundColor: '#111115',
+        borderColor: '#111115',
+        borderTopWidth: 0,
+      },
+    })}
   >
-    <App.Screen name="Home" component={Views.Home} />
-  </App.Navigator>
+    <Tab.Screen name="Home" component={Pages.Home} />
+    <Tab.Screen name="Launches" component={Pages.Launches} />
+  </Tab.Navigator>
 );
 
 export default AppRoutes;
