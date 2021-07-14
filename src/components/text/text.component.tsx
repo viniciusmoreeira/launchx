@@ -2,24 +2,25 @@ import React from 'react';
 import { Text as RNText } from 'react-native';
 
 import { useTheme } from '~/context';
+import { useDefaultProps } from '~/utils/useDefaultProps';
 
 import { getStyle } from './text.style';
 import { TextProps } from './text.type';
 
-const defaultProps: TextProps = {
-  color: 'secondary',
-  textAlign: 'auto',
-  textTransform: 'none',
-  fontSize: 'md',
-  overflow: 'hidden',
-  textAlignVertical: 'center',
-};
-
 const Text: React.FC<TextProps> = (incomingProps) => {
-  const { theme } = useTheme();
-  const { children, ...rest } = incomingProps;
+  const props = useDefaultProps('Button', incomingProps, {
+    color: 'secondary',
+    textAlign: 'auto',
+    textTransform: 'none',
+    fontSize: 'md',
+    overflow: 'hidden',
+    textAlignVertical: 'center',
+  });
 
-  const computedStyle = getStyle(theme, incomingProps);
+  const { children, ...rest } = props;
+  const { theme } = useTheme();
+
+  const computedStyle = getStyle(theme, props);
 
   return (
     <RNText style={computedStyle.text} {...rest}>
@@ -27,7 +28,5 @@ const Text: React.FC<TextProps> = (incomingProps) => {
     </RNText>
   );
 };
-
-Text.defaultProps = defaultProps;
 
 export { Text };

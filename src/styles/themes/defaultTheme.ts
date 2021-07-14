@@ -15,11 +15,14 @@ export default {
   },
 
   fontFamily: {
-    RobotoLight: 'Roboto_300Light',
-    RobotoRegular: 'Roboto_400Regular',
-    RobotoMedium: 'Roboto_500Medium',
-    RobotoBold: 'Roboto_700Bold',
-    RobotoExtraBold: 'Roboto_900Black',
+    normal: 'Roboto_400Regular',
+    bold: 'Roboto_700Bold',
+    100: 'Roboto_100Thin',
+    300: 'Roboto_300Light',
+    400: 'Roboto_400Regular',
+    500: 'Roboto_500Medium',
+    700: 'Roboto_700Bold',
+    900: 'Roboto_900Black',
   },
 
   borderRadius: {

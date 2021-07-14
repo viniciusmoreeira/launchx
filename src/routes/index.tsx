@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import {
   useFonts,
+  Roboto_100Thin,
   Roboto_300Light,
   Roboto_400Regular,
   Roboto_500Medium,
@@ -12,7 +13,6 @@ import LottieView from 'lottie-react-native';
 import styled from 'styled-components/native';
 
 import { SplashAnimation } from '~/assets/animations';
-import { useTheme } from '~/context';
 import { useTimeout } from '~/hooks';
 
 import AppRoutes from './app.routes';
@@ -27,6 +27,7 @@ const Container = styled.View`
 const Routes: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [fontsLoaded] = useFonts({
+    Roboto_100Thin,
     Roboto_300Light,
     Roboto_400Regular,
     Roboto_500Medium,

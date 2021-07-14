@@ -231,14 +231,12 @@ export interface TextPropsType {
     | 'normal'
     | 'bold'
     | '100'
-    | '200'
     | '300'
     | '400'
     | '500'
-    | '600'
     | '700'
-    | '800'
     | '900';
+
   fontFamily?: string;
   lineHeight?: number;
   textAlign?: 'auto' | 'left' | 'right' | 'center' | 'justify';
@@ -279,10 +277,10 @@ export interface LoadingPropsType {
   loaderColor?: string;
 }
 
-export const preffixSuffixProps = ['preffix', 'suffix'] as const;
-export interface PrefixSuffixPropsType {
-  suffix?: React.ReactNode;
-  prefix?: React.ReactNode;
+export const accessoriesProps = ['accessoryLeft', 'accessoryRight'] as const;
+export interface AccessoriesPropsType {
+  accessoryLeft?: React.ReactNode;
+  accessoryRight?: React.ReactNode;
 }
 
 export const inputProps = ['focusBorderColor'] as const;

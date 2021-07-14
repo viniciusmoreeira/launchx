@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { StyleSheet } from 'react-native';
 
-import { ThemeType } from '~/styles/styled';
+import { ThemeType } from '~/styles/themes/type';
 import {
   getThemeProperty,
   createSpacingStyles,

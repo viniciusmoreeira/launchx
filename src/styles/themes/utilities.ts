@@ -1,6 +1,10 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import { ThemeProps } from '~/@types/types';
 import { TextProps } from '~/components/text/text.type';
-import { ThemeType } from '~/styles/styled';
+
+import { ThemeType } from './type';
 
 /**
  * create spacing styles from object of style props passed to component
@@ -14,9 +18,7 @@ export const createSpacingStyles = (
   props: any,
   theme: ThemeType['spacing'],
 ) => {
-  let propKeys: any;
-
-  propKeys = {
+  const propKeys: ThemeProps<string> = {
     p: 'padding',
     pt: 'paddingTop',
     pr: 'paddingRight',
@@ -50,7 +52,7 @@ export const createSpacingStyles = (
 
 /**
  * extract the theme property from theme
- * if thereis no theme property in the value, return the value
+ * if there is no theme property in the value, return the value
  *
  * @param themeColors
  * @param value
@@ -70,7 +72,7 @@ export const getThemeColor = (
 
 /**
  * extract the theme property from theme
- * if thereis no theme property in the value, return the value
+ * if there is no theme property in the value, return the value
  *
  * @param theme
  * @param value
@@ -102,9 +104,7 @@ export const createBorderRadiusStyles = (
   props: any,
   theme: ThemeType['borderRadius'],
 ) => {
-  let propKeys: any;
-
-  propKeys = {
+  const propKeys: ThemeProps<string | string[]> = {
     rounded: 'borderRadius',
     roundedTopLeft: 'borderTopLeftRadius',
     roundedTopRight: 'borderTopRightRadius',
@@ -141,9 +141,7 @@ export const createBorderRadiusStyles = (
  * @param props
  */
 export const createFlexStyles = (props: any) => {
-  let propKeys: any;
-
-  propKeys = {
+  const propKeys: ThemeProps<string> = {
     flex: 'flex',
   };
 
@@ -166,9 +164,7 @@ export const createFlexStyles = (props: any) => {
  * @param value
  */
 export const createBorderWidthStyles = (props: any) => {
-  let propKeys: any;
-
-  propKeys = {
+  const propKeys: ThemeProps<string> = {
     borderWidth: 'borderWidth',
     borderStartWidth: 'borderStartWidth',
     borderEndWidth: 'borderEndWidth',
@@ -200,9 +196,7 @@ export const createBorderColorStyles = (
   props: any,
   theme: ThemeType['colors'],
 ) => {
-  let propKeys: any;
-
-  propKeys = {
+  const propKeys: ThemeProps<any> = {
     borderColor: 'borderColor',
     borderTopColor: 'borderTopColor',
     borderRightColor: 'borderRightColor',
@@ -254,9 +248,7 @@ export const createShadowStyles = (props: any, theme: ThemeType) => {
  * @param value
  */
 export const createPositionStyle = (props: any) => {
-  let propKeys: any;
-
-  propKeys = {
+  const propKeys: ThemeProps<string> = {
     position: 'position',
     top: 'top',
     left: 'left',

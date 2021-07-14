@@ -4,8 +4,8 @@ import merge from 'deepmerge';
 import { showMessage } from 'react-native-flash-message';
 import { ThemeProvider } from 'styled-components/native';
 
-import { ThemeType } from '~/styles/styled';
 import themes from '~/styles/themes';
+import { ThemeType } from '~/styles/themes/type';
 
 interface ThemeContextData {
   theme: ThemeType;
