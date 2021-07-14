@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, Text } from '~/components';
+import { Button } from '~/components';
 import { useTheme } from '~/context';
 
 import { Container, Title } from './styles';
@@ -14,16 +14,17 @@ export default function Home(): JSX.Element {
 
       <Button
         minH={50}
-        rounded="circle"
+        rounded="md"
         mt={20}
         px={40}
         bg="primary"
         onPress={() => toggleTheme()}
         shadow="md"
+        fontSize="md"
+        fontWeight="bold"
+        color="background"
       >
-        <Text fontSize="lg" fontWeight="bold" color="background">
-          Switch Color Mode
-        </Text>
+        Switch Color Mode
       </Button>
     </Container>
   );

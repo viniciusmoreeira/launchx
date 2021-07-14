@@ -11,5 +11,5 @@ export const Title = styled.Text`
   font-size: ${({ theme }) => theme.fontSize['3xl']}px;
   color: ${({ theme }) => theme.colors.primary};
 
-  font-family: ${({ theme }) => theme.fontFamily.RobotoRegular};
+  font-family: ${({ theme }) => theme.fontFamily.normal};
 `;
