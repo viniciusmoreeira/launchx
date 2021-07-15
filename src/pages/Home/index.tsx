@@ -14,12 +14,12 @@ export default function Home(): JSX.Element {
 
       <Button
         minH={50}
-        rounded="md"
         mt={20}
         px={40}
         bg="primary"
         onPress={() => toggleTheme()}
         shadow="md"
+        rounded="md"
         fontSize="md"
         fontWeight="bold"
         color="background"
