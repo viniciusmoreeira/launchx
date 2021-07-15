@@ -1,0 +1,19 @@
+import React from 'react';
+
+import { render } from '@testing-library/react-native';
+
+import {{pascalCase name}} from './{{lowerCase name}}.component';
+
+jest.mock('../../context/ThemeContext', () => ({
+  useTheme: () => ({
+    theme: {},
+  }),
+}));
+
+describe('@{{lowerCase name}}: component checks', () => {
+  it('should render', () => {
+    const component = render(<{{pascalCase name}} />);
+
+    expect(component.toJSON()).toBeTruthy();
+  });
+});
