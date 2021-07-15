@@ -34,6 +34,47 @@ export type DefaultProps<Props extends object> = {
   [K in keyof Props]?: Props[K];
 };
 
+export type FontSizingPropsType =
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl'
+  | '6xl';
+
+export type BorderRadiusSizingPropsType =
+  | 'none'
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | 'circle';
+
+export type SpacingSizingPropsType =
+  | 'none'
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '-xs'
+  | '-sm'
+  | '-md'
+  | '-lg'
+  | '-xl'
+  | '-2xl'
+  | '-3xl';
+
+export type ShadowSizingPropsType = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+
 export const borderProps = [
   'borderColor',
   'borderTopColor',
@@ -84,22 +125,22 @@ export const spacingProps = [
   'ps',
 ] as const;
 export interface SpacingPropsType {
-  m?: string | number;
-  mt?: string | number;
-  mr?: string | number;
-  mb?: string | number;
-  ml?: string | number;
-  mx?: string | number;
-  my?: string | number;
-  ms?: string | number;
-  p?: string | number;
-  pt?: string | number;
-  pr?: string | number;
-  pb?: string | number;
-  pl?: string | number;
-  px?: string | number;
-  py?: string | number;
-  ps?: string | number;
+  m?: SpacingSizingPropsType | number;
+  mt?: SpacingSizingPropsType | number;
+  mr?: SpacingSizingPropsType | number;
+  mb?: SpacingSizingPropsType | number;
+  ml?: SpacingSizingPropsType | number;
+  mx?: SpacingSizingPropsType | number;
+  my?: SpacingSizingPropsType | number;
+  ms?: SpacingSizingPropsType | number;
+  p?: SpacingSizingPropsType | number;
+  pt?: SpacingSizingPropsType | number;
+  pr?: SpacingSizingPropsType | number;
+  pb?: SpacingSizingPropsType | number;
+  pl?: SpacingSizingPropsType | number;
+  px?: SpacingSizingPropsType | number;
+  py?: SpacingSizingPropsType | number;
+  ps?: SpacingSizingPropsType | number;
 }
 
 export const roundedProps = [
@@ -114,20 +155,20 @@ export const roundedProps = [
   'roundedBottom',
 ] as const;
 export interface RoundedPropsType {
-  rounded?: string | number;
-  roundedTopLeft?: string | number;
-  roundedTopRight?: string | number;
-  roundedBottomLeft?: string | number;
-  roundedBottomRight?: string | number;
-  roundedTop?: string | number;
-  roundedLeft?: string | number;
-  roundedRight?: string | number;
-  roundedBottom?: string | number;
+  rounded?: BorderRadiusSizingPropsType | number;
+  roundedTopLeft?: BorderRadiusSizingPropsType | number;
+  roundedTopRight?: BorderRadiusSizingPropsType | number;
+  roundedBottomLeft?: BorderRadiusSizingPropsType | number;
+  roundedBottomRight?: BorderRadiusSizingPropsType | number;
+  roundedTop?: BorderRadiusSizingPropsType | number;
+  roundedLeft?: BorderRadiusSizingPropsType | number;
+  roundedRight?: BorderRadiusSizingPropsType | number;
+  roundedBottom?: BorderRadiusSizingPropsType | number;
 }
 
 export const shadowProps = ['shadow', 'shadowColor'] as const;
 export interface ShadowPropsType {
-  shadow?: string | number;
+  shadow?: ShadowSizingPropsType | number;
   shadowColor?: string;
 }
 
@@ -218,7 +259,7 @@ export const textProps = [
 ] as const;
 export interface TextPropsType {
   color?: string;
-  fontSize?: string | number;
+  fontSize?: FontSizingPropsType | number;
   textDecorLine?:
     | 'none'
     | 'underline'
